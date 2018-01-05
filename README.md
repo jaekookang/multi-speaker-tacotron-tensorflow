@@ -1,5 +1,26 @@
 # Multi-Speaker Tacotron in TensorFlow
 
+---
+
+This is a modified version of Tacotron by me.
+Only Son's dataset was used for training.
+
+* notes
+- conda environment was created to separate from other dependencies.
+- Python modules were installed based on requirements.txt. tensorflow-gpu was selected instead of cpu version.
+  - TensorFlow 1.4 was found to be conflicting with 1.3 due to tensorflow.contrib.seq2seq.Helper
+- Trained models are no longer available.
+- Son's dataset only occupies more than 35 GB.
+  - Raw Audio (15GB) --> Processed Audio+Text (17GB)
+  - Video data were removed due to the storage limit.
+  - *.npz binary file contains audio data (linear and mel) with corresponding character-based tokens
+- Training can be tracked using TensorBoard; for example,
+  ```bash
+  tensorboard --logdir=logs/son_2018-01-05_05-37-03 --port=8080
+  ```
+
+---
+
 [[한국어 가이드](./README_ko.md)]
 
 TensorFlow implementation of:
